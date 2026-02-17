@@ -20,7 +20,7 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 from __future__ import division
-from past.utils import old_div
+# from past.utils import old_div
 from builtins import object
 import pytest  # noqa
 
@@ -60,7 +60,8 @@ class Downloader(object):
 
 #     def testDownloadUnzipDir(self, tmpdir):
 #         with tmpdir.as_cwd():
-#             self.download('--unzipdir', 'OMERO.java', '--branch', self.branch,
+#             self.download('--unzipdir', 'OMERO.java',
+#                           '--branch', self.branch,
 #                           '--ice', self.ice)
 #             expected = old_div(tmpdir, 'OMERO.java')
 #             assert expected.exists()
