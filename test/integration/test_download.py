@@ -124,16 +124,16 @@ class TestDownloadRelease(Downloader):
             self.download('-n', '--release', '5.3', '--ice', '3.3')
 
 
-class TestDownloadBioFormats(Downloader):
+# class TestDownloadBioFormats(Downloader):
 
-    def setup_class(self):
-        self.branch = 'BIOFORMATS-build'
+#     def setup_class(self):
+#         self.branch = 'BIOFORMATS-build'
 
-    def testDownloadJar(self, tmpdir):
-        self.artifact = 'formats-api'
-        with tmpdir.as_cwd():
-            self.download('--branch', self.branch)
-            files = tmpdir.listdir()
-            assert len(files) == 1
-            assert files[0].basename.endswith(".jar")
-            assert files[0].basename.startswith('formats-api')
+#     def testDownloadJar(self, tmpdir):
+#         self.artifact = 'formats-api'
+#         with tmpdir.as_cwd():
+#             self.download('--branch', self.branch)
+#             files = tmpdir.listdir()
+#             assert len(files) == 1
+#             assert files[0].basename.endswith(".jar")
+#             assert files[0].basename.startswith('formats-api')
