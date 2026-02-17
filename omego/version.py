@@ -20,9 +20,26 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 
+# from __future__ import print_function
+# import yaclifw.version
+# import importlib.resources
+
+
+# class Version(yaclifw.version.Version):
+#     """Find which version of this library is being used"""
+
+#     FILE = __file__
+
+#     def __call__(self, args):
+#         super(yaclifw.version.Version, self).__call__(args)
+#         data = importlib.resources.files(__name__).\
+#             joinpath('RELEASE-VERSION').read_bytes()
+#         print(data.rstrip())
+
+
 from __future__ import print_function
 import yaclifw.version
-import importlib.resources
+from pkg_resources import resource_string
 
 
 class Version(yaclifw.version.Version):
@@ -32,6 +49,4 @@ class Version(yaclifw.version.Version):
 
     def __call__(self, args):
         super(yaclifw.version.Version, self).__call__(args)
-        data = importlib.resources.files(__name__).joinpath(
-            'RELEASE-VERSION').read_bytes()
-        print(data.rstrip())
+        print(resource_string(__name__, 'RELEASE-VERSION').rstrip())
