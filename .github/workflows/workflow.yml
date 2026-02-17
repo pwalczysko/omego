@@ -15,15 +15,15 @@ jobs:
       fail-fast: false
       matrix:
         python-version:
-          - '3.8'
+          - '3.12'
         os:
-          - ubuntu-20.04
+          - ubuntu-24.04
         commands:
           - 'install'
     runs-on: ${{ matrix.os }}
     services:
       postgres:
-        image: postgres:11
+        image: postgres:16
         env:
           POSTGRES_DB: omero
           POSTGRES_PASSWORD: omero
