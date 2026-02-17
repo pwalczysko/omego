@@ -15,9 +15,9 @@ jobs:
       fail-fast: false
       matrix:
         python-version:
-          - '3.11'
+          - '3.10'
         os:
-          - ubuntu-24.04
+          - ubuntu-22.04
         commands:
           - 'install'
     runs-on: ${{ matrix.os }}
