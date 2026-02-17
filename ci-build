@@ -5,7 +5,7 @@ set -u
 set -x
 
 python --version
-pip install setuptools
+pip install setuptools==v71.1.0
 python setup.py test -t test/unit -v
 python setup.py test -t test/integration -v -m "not slowtest"
 python setup.py sdist install
